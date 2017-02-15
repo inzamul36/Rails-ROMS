@@ -1,0 +1,39 @@
+<% content_for :title, "Add Product" %>
+
+<div class="ibox float-e-margins">
+  <div class="ibox-title">
+    <h5>Add Product <small>Please </small></h5>
+    <div class="ibox-tools">
+      <a class="collapse-link">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+      <a class="close-link">
+        <i class="fa fa-times"></i>
+      </a>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <div class="row">
+      <%= form_for @product do|f| %>
+          <div class="col-sm-6"><h3 class="m-t-none m-b">Product Info</h3>
+            <div class="form-group">
+              <label>Product Name</label>
+              <%= f.text_field :product_name, :placeholder=>"Enter product name", :class=>"form-control", :required=>'' %>
+            </div>
+            <div class="form-group">
+              <label>Product Price</label>
+              <%= f.text_field :price, :placeholder=>"Enter product price", :class=>"form-control", :type=>'number', :required=>'' %>
+            </div>
+            <div class="form-group">
+              <label>Product Details</label>
+              <%= f.text_area :product_details, :placeholder=>"Enter product details", :class=>"form-control", :rows=>"3", :required=>'' %>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="hr-line-dashed"></div>
+            <%= f.submit :class=>"btn btn-sm btn-primary pull-right m-t-n-xs" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
